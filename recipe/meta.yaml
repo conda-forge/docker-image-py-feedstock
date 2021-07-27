@@ -1,5 +1,5 @@
 {% set name = "docker-image-py" %}
-{% set version = "0.1.10" %}
+{% set version = "0.1.12" %}
 
 package:
   name: {{ name }}
@@ -7,7 +7,7 @@ package:
 
 source:
   - url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-    sha256: 2629760de8f230096b7e87aceba07e2e863a72da4da24b914153bee505774af7
+    sha256: c0eebb6c25714b2a4f91a1462183e70252fa34fb189496d3c54711a64f12f96e
   # TODO: remove if/when merged https://github.com/realityone/docker-image-py/pull/8
   - fn: {{ name }}-{{ version }}-LICENSE-APACHE
     url: https://raw.githubusercontent.com/realityone/{{ name }}/{{ version }}/LICENSE
