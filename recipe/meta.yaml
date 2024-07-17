@@ -1,15 +1,15 @@
-{% set version = "0.1.12" %}
+{% set version = "0.1.13" %}
 
 package:
   name: docker-image-py
   version: {{ version }}
 
 source:
-  - url: https://pypi.io/packages/source/d/docker-image-py/docker-image-py-{{ version }}.tar.gz
-    sha256: c0eebb6c25714b2a4f91a1462183e70252fa34fb189496d3c54711a64f12f96e
+  - url: https://pypi.io/packages/source/d/docker-image-py/docker_image_py-{{ version }}.tar.gz
+    sha256: de2755de0a09c99ae3b4cf42cc470a83b35bfdc4bf8ad66a3d7550d622a8915a
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
