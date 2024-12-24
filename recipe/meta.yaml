@@ -5,20 +5,20 @@ package:
   version: {{ version }}
 
 source:
-  - url: https://pypi.io/packages/source/d/docker-image-py/docker_image_py-{{ version }}.tar.gz
+  - url: https://pypi.org/packages/source/d/docker-image-py/docker_image_py-{{ version }}.tar.gz
     sha256: de2755de0a09c99ae3b4cf42cc470a83b35bfdc4bf8ad66a3d7550d622a8915a
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
-    - python >=2.7
+    - python {{ python_min }}
   run:
-    - python >=2.7
+    - python >={{ python_min }}
     - regex >=2019.4.14
 
 test:
@@ -28,6 +28,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/realityone/docker-image-py
