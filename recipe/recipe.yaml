@@ -1,0 +1,48 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/prefix-dev/recipe-format/main/schema.json
+schema_version: 1
+
+context:
+  version: "0.2.0"
+  python_check_max: "3.14"
+
+package:
+  name: docker-image-py
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/d/docker-image-py/docker_image_py-${{ version }}.tar.gz
+  sha256: 451ad5b3b656d00797e2b84e7ee2629a01012c52a83439cbcfbdeadc3ead3ae1
+
+build:
+  number: 0
+  noarch: python
+  script:
+    - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check
+
+requirements:
+  host:
+    - pip
+    - python ${{ python_min }}.*
+    - setuptools >=77.0.3
+  run:
+    - python >=${{ python_min }}
+    - regex >=2019.4.14
+
+tests:
+  - python:
+      imports: docker_image
+      pip_check: true
+      python_version:
+        - ${{ python_min }}.*
+        - ${{ python_check_max }}.*
+
+about:
+  summary: Parse docker image as distribution does.
+  license: Apache-2.0
+  license_file: LICENSE
+  homepage: https://pypi.org/project/docker-image-py
+  repository: https://github.com/realityone/docker-image-py
+
+extra:
+  recipe-maintainers:
+    - bollwyvl
