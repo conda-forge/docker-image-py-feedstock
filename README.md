@@ -3,11 +3,13 @@ About docker-image-py-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/docker-image-py-feedstock/blob/main/LICENSE.txt)
 
-Home: https://github.com/realityone/docker-image-py
+Home: https://pypi.org/project/docker-image-py
 
 Package license: Apache-2.0
 
 Summary: Parse docker image as distribution does.
+
+Development: https://github.com/realityone/docker-image-py
 
 Current build status
 ====================
